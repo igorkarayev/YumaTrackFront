@@ -1,0 +1,19 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "no-unused-vars": "warn",
+    "quotes": [2, "double"],
+    "interface-name": false,
+    "no-var-keyword": true,
+    "no-unused-variable": true,
+    "no-shadowed-variable": true,
+    "no-console": true
+  },
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ]
+}
