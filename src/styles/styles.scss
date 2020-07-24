@@ -6,3 +6,19 @@ body{
 h1 {
     text-align: center;
 }
+.app_wrapper{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+
+    grid-template-rows: 5vh 95vh;
+    grid-template-columns: 5vw 95vw;
+    grid-template-areas:
+            "n h"
+            "n c";
+}
+.app_header{
+    grid-area: h;
+    background-color: #f3c7a4;
+}

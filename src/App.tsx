@@ -6,24 +6,27 @@ import Analytics from './components/analytics/index';
 import Settings from './components/settings/index';
 import Tasks from './components/tasks/index';
 
+import './styles/styles.scss'
 
 
-const App = (): any =>{
- return <div>
 
-  <h1>yumatime</h1>
+const App = (): any => {
+  return <div className='app_wrapper'>
 
-  <BrowserRouter>
-   <Navbar/>
-   <Switch>
-    <Route exact path='/' component={Home}/>
-    <Route path='/tasks' component={Tasks}/>
-    <Route exact path='/analytics' component={Analytics}/>
-    <Route path='/settings' component={Settings}/>
-   </Switch>
-  </BrowserRouter>
+    <h1 className='app_header'>yumatime</h1>
+    <BrowserRouter>
 
-   </div>
+        <Navbar/>
+        <Switch>
+          <Route exact path='/' component={Home}/>
+          <Route path='/tasks' component={Tasks}/>
+          <Route exact path='/analytics' component={Analytics}/>
+          <Route path='/settings' component={Settings}/>
+        </Switch>
+
+    </BrowserRouter>
+
+  </div>
 }
 
 export default App

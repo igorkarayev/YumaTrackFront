@@ -1,5 +1,6 @@
 import React from 'react'
-
+import './style.scss'
+// @ts-ignore
 import {Bar} from 'react-chartjs-2';
 
 
@@ -18,8 +19,8 @@ const data = {
   ]
 };
 
-const Analitics = (): any =>{
-  return <div>
+const Analytics = (): any =>{
+  return <div className='analYtics_wrapper'>
     Analytics
     <div>
       <h2>Bar Example (custom size)</h2>
@@ -36,4 +37,4 @@ const Analitics = (): any =>{
   </div>
 }
 
-export default Analitics
+export default Analytics
