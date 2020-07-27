@@ -1,5 +1,5 @@
 import React from 'react'
-import './style.scss'
+import style from './style.module.scss'
 // @ts-ignore
 import {Bar} from 'react-chartjs-2';
 
@@ -20,7 +20,7 @@ const data = {
 };
 
 const Analytics = (): any =>{
-  return <div className='analYtics_wrapper'>
+  return <div className={style.analytics_wrapper}>
     Analytics
     <div>
       <h2>Bar Example (custom size)</h2>

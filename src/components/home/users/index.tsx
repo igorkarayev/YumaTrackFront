@@ -1,11 +1,11 @@
 import React from 'react'
-import './styles.scss'
+import style from './styles.module.scss'
 
 
-const Users = (): any =>{
-  return <div className='users_wrapper'>
-    <h2>Users</h2>
-    here will be
+const Users = (): any => {
+  return <div className={style.users_wrapper}>
+
+    Users will be here
   </div>
 }
 

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import './style.scss'
+import style from './style.module.scss'
 
 
 const Navbar = () => {
-  return <nav className='nav_menu'>
+  return <nav className={style.nav_menu}>
     <div>
       <ul>
         <li> >> </li>

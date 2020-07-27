@@ -1,15 +1,13 @@
-.nav_menu{
-  grid-area: n;
+.nav_menu {
   background-color: #f6b7df;
- display: flex;
+  display: flex;
   text-align: center;
   margin: 0 0;
 }
 
-li{
+li {
   height: 4vw;
   width: 4vw;
   background-color: #f6b7c0;
-  //padding: 10px;
   margin: 5px;
 }

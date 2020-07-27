@@ -1,11 +1,15 @@
-import React from 'react'
-import './styles.scss'
+import React, { useState } from 'react'
+import styles from './styles.module.scss';
 
+const OurCalendar = (): any => {
+  const [date, setNewDate] = useState(new Date())
 
-const Calendar = (): any =>{
-  return <div className='calendar_wrapper'>
-  <input type='date'/>
+  return <div className={styles.calendar_wrapper}>
+    <input type='date'/>
+    <div>
+
+    </div>
   </div>
 }
 
-export default Calendar
+export default OurCalendar

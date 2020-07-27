@@ -1,10 +1,10 @@
 import React from 'react'
 
 
-const Tasks = (): any =>{
+const TasksManager = (): any =>{
   return <div>
   TASKS
   </div>
 }
 
-export default Tasks
+export default TasksManager

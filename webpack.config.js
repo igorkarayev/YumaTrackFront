@@ -101,19 +101,45 @@ const filename = ext => isDev ? `[name].${(ext)}` : `[name].[hash].${(ext)}`
       }),
       new CleanWebpackPlugin(), // чистит файл от результата прошлых сборок
       new MiniCssExtractPlugin({
-        filename: '[name].[hash].css'
+          filename: isDev ? '[name].css' : '[name].[hash].css',
+          chunkFilename: isDev ? '[id].css' : '[id].[hash].css'
       })
     ],
     module: { //лоадеры для работы webpack с иными расширениями файлов, а не только js/json
       rules: [
         {
-          test: /\.css$/,       //лоадер для css
-          use: cssLoaders()
-        },
-        {
-          test: /\.s[ac]ss$/,    //лоадер для scss/sass
-          use: cssLoaders('sass-loader')
-        },
+        test: /\.module\.s(a|c)ss$/,
+          loader: [
+            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true,
+                  sourceMap: isDev
+              }
+            },
+          {
+            loader: 'sass-loader',
+              options: {
+                sourceMap: isDev
+              }
+          }
+        ]
+      },
+      {
+        test: /\.s(a|c)ss$/,
+          exclude: /\.module.(s(a|c)ss)$/,
+          loader: [
+            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+            'css-loader',
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: isDev
+              }
+          }
+        ]
+      },
         {
           test: /\.(js)$/,
           exclude: /node_modules/,
@@ -139,7 +165,6 @@ const filename = ext => isDev ? `[name].${(ext)}` : `[name].[hash].${(ext)}`
         {
           test: /\.tsx$/,
           exclude: /node_modules/,
-          // use: jsLoaders('@babel/preset-typescript')
           loader: 'babel-loader',
           options: {
             presets: [
@@ -154,7 +179,7 @@ const filename = ext => isDev ? `[name].${(ext)}` : `[name].[hash].${(ext)}`
           }
         },
       ]
-    },
+      },
     devtool: isDev ? 'source-map' : '',
     devServer: {
       port:4000,
